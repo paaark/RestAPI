@@ -1,10 +1,10 @@
-package com.restapi.project.Response;
+package com.restapi.project.Board.Response;
 
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import com.restapi.project.domain.Enum.ErrorCode;
+import com.restapi.project.Board.Enum.ErrorCode;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)

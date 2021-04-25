@@ -1,6 +1,6 @@
-package com.restapi.project.Exception;
+package com.restapi.project.Board.Exception;
 
-import com.restapi.project.domain.Enum.ErrorCode;
+import com.restapi.project.Board.Enum.ErrorCode;
 
 import lombok.Getter;
 

@@ -1,12 +1,12 @@
-package com.restapi.project.Exception;
+package com.restapi.project.Board.Exception;
 
 import org.springframework.http.ResponseEntity;
-import com.restapi.project.Response.ErrorResponse;
+import com.restapi.project.Board.Response.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.restapi.project.domain.Enum.ErrorCode;
+import com.restapi.project.Board.Enum.ErrorCode;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
