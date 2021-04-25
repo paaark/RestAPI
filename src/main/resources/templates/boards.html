@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <td>
+                번호
+            </td>
+            <td>
+                제목
+            </td>
+            <td>
+                작성자
+            </td>
+            <td>
+                날짜
+            </td>
+        </thead>
+        <tbody>
+            <tr th:if="${not #lists.isEmpty(boardList)}" th:each="row : ${boardList}">
+                <td>
+                    <a th:href="@{/boards/(no=${row.id})}" th:text="${row.title}"></a>
+                </td>
+                <td th:text="${row.writer}"></td>
+                <td th:text="${#calendars.format(row.insertDate, 'yyyy-MM-dd')}"></td>
+            </tr>
+        <tr th:unless="${not #lists.isEmpty(boardList)}">
+            <td colspan="100">조회된 결과가 없습니다.</td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,18 @@
+server:
+  port: 8080  # Spring boot Server port
+
+spring:
+  h2:
+    console:
+      enabled: true  # H2 웹 콘솔을 사용하겠다는 의미
+      path: /restapi  # 콘솔의 경로
+
+  datasource:
+    driver-class-name: org.h2.Driver  #h2 드라이버 설정
+    url: ENC(GTGf3iwzktpreui9JEWgXXZaXKewDcuXVjnw4uCam6DonVyqyLqeJt98P9OB3XkX)  #접속 URL
+    username: ENC(aivJbJqQ1Y4BMK53eVU4Ug==)  # 사용자 이름 (로그인 시 사용)
+    password: ENC(VCikwnabTUWCyuqF6OHabs7Ik26fV/zo)  # 사용자 암호 (로그인 시 사용)
+
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor

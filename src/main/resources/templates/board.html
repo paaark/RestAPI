@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{/board}" method="post">
+        <input type="text" name="writer" placeholder="작성자">
+        <input type="text" name="title" placeholder="제목">
+        <input type="text" name="content" placeholder="내용">
+        <button type="submit">등록</button>
+    </form>
+</body>
+</html>
