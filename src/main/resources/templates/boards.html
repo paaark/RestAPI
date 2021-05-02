@@ -23,10 +23,13 @@
         <tbody>
             <tr th:if="${not #lists.isEmpty(boardList)}" th:each="row : ${boardList}">
                 <td>
-                    <a th:href="@{/boards/(no=${row.id})}" th:text="${row.title}"></a>
+                    <span th:text="${row.id}"></span>
+                </td>
+                <td>
+                    <a th:href="@{'/boards/' + ${row.id}}" th:text="${row.title}"></a>
                 </td>
                 <td th:text="${row.writer}"></td>
-                <td th:text="${#calendars.format(row.insertDate, 'yyyy-MM-dd')}"></td>
+                <td th:text="${#temporals.format(row.insertDate, 'yyyy-MM-dd')}"></td>
             </tr>
         <tr th:unless="${not #lists.isEmpty(boardList)}">
             <td colspan="100">조회된 결과가 없습니다.</td>

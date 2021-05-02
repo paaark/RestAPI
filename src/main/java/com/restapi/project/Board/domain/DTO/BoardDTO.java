@@ -1,9 +1,7 @@
 package com.restapi.project.Board.domain.DTO;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.restapi.project.Board.Entity.Board;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
@@ -12,20 +10,34 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class BoardDTO {
 
-    @Column(nullable = false)
+    private Long id;
     private String writer;
-
-    @NotBlank(message="제목은 필수입니다.")
-    @Column(length = 500, nullable = false)
     private String title;
-
-    @NotBlank(message="내용은 필수입니다.")
-    @Column(length = 1000, nullable = false)
     private String content;
-
     private LocalDateTime insertDate;
+    private LocalDateTime updateDate;
+
+    public Board toEntity() {
+        Board build = Board.builder()
+                .id(id)
+                .writer(writer)
+                .title(title)
+                .content(content)
+                .build();
+        return build;
+    }
+
+    @Builder
+    public BoardDTO(Long id, String writer, String title, String content, LocalDateTime insertDate, LocalDateTime updateDate) {
+        this.id = id;
+        this.writer = writer;
+        this.title = title;
+        this.content = content;
+        this.insertDate = insertDate;
+        this.updateDate = updateDate;
+    }
+
 
 }
